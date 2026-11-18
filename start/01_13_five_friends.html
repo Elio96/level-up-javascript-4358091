@@ -15,8 +15,19 @@
   <div id="timeline"></div>
 
   <script>
-    // Write your code here
-    
+    const getUser = async () => {
+      let people = await fetch('https://randomuser.me/api/?results=5');
+      let data = await people.json();
+      const timeline = document.querySelector('#timeline');
+      data.results.forEach(element => {
+        let image = document.createAttribute('img');
+        image.src = element.picture.medium;
+        timeline.appendChild(image);
+      });
+      console.log(data);
+    }
+    getUser();
+
   </script>
 </body>
 

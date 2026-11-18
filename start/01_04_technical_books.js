@@ -31,3 +31,17 @@ class Book {
 }
 
 // Write your code here
+
+class TechnicalBook extends Book {
+  constructor(title, author, ISBN, numCopies, edition) {
+    super(title, author, ISBN, numCopies)
+    this.edition = edition
+  }
+
+  getEdition = () => {
+    return `the current is ${this.edition}`;
+  }
+}
+
+const coso = new TechnicalBook("bel", "titolo", 123, 3, "ed1");
+console.log(coso.getEdition());
